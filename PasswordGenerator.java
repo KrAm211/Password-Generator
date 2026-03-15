@@ -22,7 +22,7 @@ public class PasswordGenerator {
                 int index = random.nextInt(characters.length());
                 char randomCharacter = characters.charAt(index);
                 passwordstring.append(randomCharacter);
-            }
+        }
         
         System.out.println("Generated password: " + passwordstring);
         System.out.print("Generate another password? (y/n): ");
