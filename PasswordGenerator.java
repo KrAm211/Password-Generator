@@ -7,28 +7,28 @@ public class PasswordGenerator {
         System.out.println("Password Generator");
         
         Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
         boolean running = true;
+
+        String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
         
         while (running) {
             System.out.print("Enter your password length: ");
             int length = scanner.nextInt();
             
-            String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
-
-            Random random = new Random();
-            String password = "";
+            StringBuilder passwordstring = new StringBuilder();
             
             for (int i = 0; i < length; i++) {
                 int index = random.nextInt(characters.length());
                 char randomCharacter = characters.charAt(index);
-                password += randomCharacter;
+                passwordstring.append(randomCharacter);
             }
         
-        System.out.println("Generated password: " + password);
-        System.out.println("Generate another password? (y/n): ");
+        System.out.println("Generated password: " + passwordstring);
+        System.out.print("Generate another password? (y/n): ");
         String answer = scanner.next();
             
-        if (answer.equals("n")) {
+        if (answer.equalsIgnoreCase("n")) {
             running = false;
         }
     }
