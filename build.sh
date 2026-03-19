@@ -2,6 +2,7 @@
 set -e
 
 APP_NAME="NEXUS Password Generator"
+VERSION="v1.0.1"
 MAIN_CLASS="PasswordGeneratorGUI"
 ICON_FILE="logo.icns"
 INPUT_DIR="input"
