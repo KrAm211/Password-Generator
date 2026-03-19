@@ -2,7 +2,7 @@
 set -e
 
 APP_NAME="NEXUS Password Generator"
-VERSION="v1.0.1"
+VERSION="1.0.1"
 MAIN_CLASS="PasswordGeneratorGUI"
 ICON_FILE="logo.icns"
 INPUT_DIR="input"
@@ -33,12 +33,17 @@ jpackage \
   --main-class "$MAIN_CLASS" \
   --type dmg \
   --dest "$OUTPUT_DIR" \
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   --icon "$ICON_FILE"
 =======
   --icon "$ICON_FILE" \
   --app-version "$VERSION"
 >>>>>>> Stashed changes
+=======
+  --icon "$ICON_FILE" \
+  --app-version "VERSION"
+>>>>>>> 1db7ef890db241c04433e39e77fda8391c917430
 
 echo "Done."
 echo "Your new build is in: $OUTPUT_DIR"
