@@ -9,6 +9,8 @@ A simple desktop password generator built in Java with Swing.
 - Copy password to clipboard
 - macOS desktop app
 
+![App Screenshot](screenshot.png)
+
 ## Download
 
 Download the latest version from the **Releases** page.
