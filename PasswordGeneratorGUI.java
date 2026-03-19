@@ -11,6 +11,7 @@ public class PasswordGeneratorGUI {
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("NEXUS - Password Generator");
+        frame.setIconImage(new ImageIcon("logo.png").getImage());
         frame.setSize(280, 220);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
