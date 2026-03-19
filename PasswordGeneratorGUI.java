@@ -115,7 +115,7 @@ public class PasswordGeneratorGUI {
             timer.start();
             });
 
-        frame.setVisible(true);
+        frame.setVisible(true); 
 
     }
     
