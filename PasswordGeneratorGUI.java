@@ -13,6 +13,7 @@ public class PasswordGeneratorGUI {
         JFrame frame = new JFrame("NEXUS - Password Generator");
         frame.setIconImage(new ImageIcon("logo.png").getImage());
         frame.setSize(280, 220);
+        frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
         frame.setResizable(false);
@@ -98,7 +99,10 @@ public class PasswordGeneratorGUI {
         copyText.addActionListener(d -> {
             String myString = passwordField.getText();
 
-            if (myString.isEmpty()) {
+            if (myString.isEmpty()
+                    || myString.equals("Please enter numbers only!")
+                    || myString.equals("Length must be between 12 and 32!")
+                    || myString.equals("Select at least one character type")) {
                 return;
             }
 
