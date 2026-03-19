@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
 import java.awt.datatransfer.StringSelection;
-import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 
 public class PasswordGeneratorGUI {
@@ -69,6 +68,7 @@ public class PasswordGeneratorGUI {
             }
             if (characters.length() == 0) {
                 passwordfField.setText("Select at least one character type");
+                return;
             }
 
             StringBuilder password = new StringBuilder();
@@ -82,17 +82,21 @@ public class PasswordGeneratorGUI {
                 //Print password at this step for debugging
                 //System.out.println("Password: " + password.toString());
             }
+
+            passwordfField.setText(password.toString());
+
+        });
+
         copyText.addActionListener(d -> {
-            String myString = (password.toString());
+            String myString = passwordfField.getText();
             StringSelection stringSelection = new StringSelection(myString);
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
             clipboard.setContents(stringSelection, null);
-        });
 
-            passwordfField.setText(password.toString());
         });
 
         frame.setVisible(true);
+
     }
     
 }
