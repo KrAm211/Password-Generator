@@ -8,11 +8,12 @@ public class PasswordGeneratorGUI {
 
     public static int minLength = 12;
     public static int maxLength = 32;
+    public static String VERSION = "v1.0.1";
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("NEXUS - Password Generator");
         frame.setIconImage(new ImageIcon("logo.png").getImage());
-        frame.setSize(280, 220);
+        frame.setSize(280, 240);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
@@ -30,6 +31,11 @@ public class PasswordGeneratorGUI {
         passwordField.setEditable(false);
         JButton copyText = new JButton("Copy Password");
         copyText.setPreferredSize(new Dimension(150, 25));
+        JLabel versionLabel = new JLabel("KrAm - " + VERSION);
+        versionLabel.setFont(new Font("Arial", Font.BOLD, 10));
+        versionLabel.setForeground(Color.GRAY);
+        JPanel versionPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        versionPanel.setPreferredSize(new Dimension(280, 0));
 
         frame.add(lengthLabel);
         frame.add(lengthField);
@@ -40,6 +46,8 @@ public class PasswordGeneratorGUI {
         frame.add(generateButton);
         frame.add(passwordField);
         frame.add(copyText);
+        frame.add(versionPanel);
+        frame.add(versionLabel);
 
         Random random = new Random();
 
