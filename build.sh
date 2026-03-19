@@ -33,7 +33,12 @@ jpackage \
   --main-class "$MAIN_CLASS" \
   --type dmg \
   --dest "$OUTPUT_DIR" \
+<<<<<<< Updated upstream
   --icon "$ICON_FILE"
+=======
+  --icon "$ICON_FILE" \
+  --app-version "$VERSION"
+>>>>>>> Stashed changes
 
 echo "Done."
 echo "Your new build is in: $OUTPUT_DIR"
