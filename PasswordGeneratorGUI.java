@@ -1,12 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
+import java.awt.datatransfer.StringSelection;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
 
 public class PasswordGeneratorGUI {
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("NEXUS - Password Generator");
-        frame.setSize(450, 175);
+        frame.setSize(450, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
 
@@ -19,6 +22,7 @@ public class PasswordGeneratorGUI {
         JButton generateButton = new JButton("Generate Password");
         JTextField passwordfField = new JTextField(25);
         passwordfField.setEditable(false);
+        JButton copyText = new JButton("Copy Password");
 
         frame.add(lengthField);
         frame.add(lengthLabel);
@@ -28,6 +32,7 @@ public class PasswordGeneratorGUI {
         frame.add(symbolsBox);
         frame.add(generateButton);
         frame.add(passwordfField);
+        frame.add(copyText);
 
         Random random = new Random();
 
@@ -60,7 +65,7 @@ public class PasswordGeneratorGUI {
                 characters.append("0123456789");
             }
             if (symbolsBox.isSelected()) {
-                characters.append("!@#$%^&* ");
+                characters.append("!@#$%^&*");
             }
             if (characters.length() == 0) {
                 passwordfField.setText("Select at least one character type");
@@ -77,6 +82,12 @@ public class PasswordGeneratorGUI {
                 //Print password at this step for debugging
                 //System.out.println("Password: " + password.toString());
             }
+        copyText.addActionListener(d -> {
+            String myString = (password.toString());
+            StringSelection stringSelection = new StringSelection(myString);
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            clipboard.setContents(stringSelection, null);
+        });
 
             passwordfField.setText(password.toString());
         });
